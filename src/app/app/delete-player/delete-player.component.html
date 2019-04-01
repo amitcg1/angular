@@ -1,0 +1,16 @@
+<div class="container">
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel *ngFor="let player of playerlist">
+      <ng-template ngbPanelTitle>
+        <span><h3>{{player.name}}</h3>         
+        </span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <img [src]="player.image" width="150px" height="150px"><br>
+        <p>{{ player.country}}</p><br>
+        <p>{{ player.categoty}}</p><br>
+        <button class=" btn btn-outline-danger" (click)="deletePlayer(player.id)">Delete Player</button>
+      </ng-template>
+    </ngb-panel>
+    
+  </ngb-accordion>
